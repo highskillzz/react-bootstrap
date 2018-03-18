@@ -32,6 +32,9 @@ function createBootstrapComponent(Component, prefix) {
     static propTypes = {
       bsPrefix: PropTypes.string
     };
+    static defaultProps = {
+      bsRole: Component.defaultProps.bsRole
+    };
     render() {
       return (
         <ThemeContext.Consumer>

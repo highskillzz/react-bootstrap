@@ -119,7 +119,7 @@
     "keycode": "^2.1.2",
     "prop-types": "^15.6.1",
     "prop-types-extra": "^1.0.1",
-    "react-overlays": "^1.0.0-beta.0",
+    "react-overlays": "^1.0.0-beta.2",
     "react-prop-types": "^0.4.0",
     "react-transition-group": "^2.0.0",
     "uncontrollable": "^5.0.0",

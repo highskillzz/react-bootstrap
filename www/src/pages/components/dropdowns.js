@@ -32,7 +32,7 @@ export default function DropdownSection({ data }) {
       </p>
       <ReactPlayground codeText={DropdownButtonBasic} />
 
-      <h3>
+      {/* <h3>
         <Anchor id="btn-dropdowns-split">Split button dropdowns</Anchor>
       </h3>
       <p>
@@ -192,7 +192,7 @@ export default function DropdownSection({ data }) {
         <Anchor id="menu-item-props">Menu Item</Anchor>
         <LinkToSource component={data.MenuItem.displayName} />
       </h4>
-      <PropTable metadata={data.MenuItem} />
+      <PropTable metadata={data.MenuItem} /> */}
     </div>
   );
 }

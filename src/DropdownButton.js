@@ -8,8 +8,8 @@ const propTypes = {
   ...Dropdown.propTypes,
 
   // Toggle props.
-  bsStyle: PropTypes.string,
-  bsSize: PropTypes.string,
+  variant: PropTypes.string,
+  size: PropTypes.string,
   title: PropTypes.node.isRequired,
   noCaret: PropTypes.bool,
 
@@ -22,7 +22,7 @@ const propTypes = {
 
 class DropdownButton extends React.Component {
   render() {
-    const { bsSize, bsStyle, title, children, ...props } = this.props;
+    const { size, variant, title, children, ...props } = this.props;
 
     const [dropdownProps, toggleProps] = splitComponentProps(
       props,
@@ -30,8 +30,8 @@ class DropdownButton extends React.Component {
     );
 
     return (
-      <Dropdown {...dropdownProps} bsSize={bsSize} bsStyle={bsStyle}>
-        <Dropdown.Toggle {...toggleProps} bsSize={bsSize} bsStyle={bsStyle}>
+      <Dropdown {...dropdownProps}>
+        <Dropdown.Toggle {...toggleProps} size={size} variant={variant}>
           {title}
         </Dropdown.Toggle>
 
