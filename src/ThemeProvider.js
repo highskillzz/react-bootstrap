@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const ThemeContext = React.createContext(new Map());
+const { Provider, Consumer } = React.createContext(new Map());
 
 class ThemeProvider extends React.Component {
   static propTypes = {
@@ -16,11 +16,7 @@ class ThemeProvider extends React.Component {
   }
 
   render() {
-    return (
-      <ThemeContext.Provider value={this.variants}>
-        {this.props.children}
-      </ThemeContext.Provider>
-    );
+    return <Provider value={this.variants}>{this.props.children}</Provider>;
   }
 }
 
@@ -28,24 +24,24 @@ function createBootstrapComponent(Component, prefix) {
   const name = Component.displayName || Component.name;
   // eslint-disable-next-line
   return class extends React.Component {
-    static displayName = `Bootstrap(${name})`;
+    static displayName = `Boostrap(${name})`;
     static propTypes = {
       bsPrefix: PropTypes.string
     };
     render() {
       return (
-        <ThemeContext.Consumer>
+        <Consumer>
           {variants => (
             <Component
               {...this.props}
               bsPrefix={this.props.bsPrefix || variants.get(prefix) || prefix}
             />
           )}
-        </ThemeContext.Consumer>
+        </Consumer>
       );
     }
   };
 }
 
-export { createBootstrapComponent };
+export { createBootstrapComponent, Consumer as ThemeConsumer };
 export default ThemeProvider;
